@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<sdf version="1.4">
+    <world name="default">
+        <plugin name="hello_world" filename="libhello_world.so"/>
+        <light name='sun' type='directional'>
+            <cast_shadows>1</cast_shadows>
+            <pose frame=''>0 0 10 0 -0 0</pose>
+            <diffuse>0.8 0.8 0.8 1</diffuse>
+            <specular>0.2 0.1 0.2 1</specular>
+            <attenuation>
+                <range>1000</range>
+                <constant>0.9</constant>
+                <linear>0.01</linear>
+                <quadratic>0.001</quadratic>
+            </attenuation>
+            <direction>-0.5 0.1 -0.9</direction>
+        </light>
+        <include>
+            <uri>model://ground_plane</uri>
+        </include>
+
+        <model name="my_ranger_xp900">
+            <include>
+                <uri>model://my_ranger_xp900</uri>
+            </include>
+            <pose frame='world'>0 0 1 0 0 0</pose>
+        </model>
+    </world>
+
+</sdf>
